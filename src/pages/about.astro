@@ -1,7 +1,5 @@
 ---
-
-import '../styles/global.css';
-
+import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "私について";
 
 const identity = {
@@ -14,7 +12,7 @@ const identity = {
 const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "ドキュメントの執筆"];
 
 const happy = true;
-const finished = false;
+const finished = true;
 const goal = 3;
 
 const skillColor = "navy";
@@ -42,11 +40,7 @@ const textCase = "uppercase";
             }
         </style>
 	</head>
-	<body>
-        <a href="/">ホーム</a>
-        <a href="/about/">概要</a>
-        <a href="/blog/">ブログ</a>
-        <h1>{pageTitle}</h1>
+    <BaseLayout pageTitle={pageTitle}>
         <h2>... そして私の新しいAstroサイトについて！</h2>
     
         <p>私はAstroの入門チュートリアルを進めています。これは私のウェブサイトの2番目のページで、自分で作った初めてのページです！</p>
@@ -64,8 +58,8 @@ const textCase = "uppercase";
         <ul>
             {skills.map((skill) => <li class="skill">{skill}</li>)}
         </ul>
-	</body>
-</html>
+    </BaseLayout>
+
 
 {happy && <p>I am happy to be learning Astro! Astroを学べて幸せです！</p>}
 
